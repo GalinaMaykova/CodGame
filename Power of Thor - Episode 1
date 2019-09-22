@@ -18,18 +18,19 @@ int main()
     int initialTX; // Thor's starting X position
     int initialTY; // Thor's starting Y position
     cin >> lightX >> lightY >> initialTX >> initialTY; cin.ignore();
-std::string directions("");
-std::string str1("");
-std::string str2("");
-int x = initialTX;
-int y = initialTY;
+    
+    string directions("");
+    string str1("");
+    string str2("");
+    int x = initialTX;
+    int y = initialTY;
 
     // game loop
     while (1) {
         int remainingTurns; // The remaining amount of turns Thor can move. Do not remove this line.
         cin >> remainingTurns; cin.ignore();
 
-  // Когда тору необходимо двигаться по вертикали (вверх или вниз), в у записывается изменненное местоположение
+  // Когда тору необходимо двигаться по вертикали (вверх или вниз), в "у" записывается изменненное местоположение
     if  (y!=lightY) {  
          if (y> lightY) {
             str1 = "N";
@@ -39,7 +40,7 @@ int y = initialTY;
             y=y+1;
          } 
     }
-    // Когда тору неободимо двигаться по горизонтали, в x записывается изменненное местоположение
+    // Когда тору неободимо двигаться по горизонтали, в "x" записывается изменненное местоположение
      if  (x!=lightX) {    
          if (x< lightX) {
             str2 = "E";
@@ -50,11 +51,11 @@ int y = initialTY;
          } 
      }
      // результирующие направление
-         directions = str1+str2;
-         
-         str1 = "";
-         str2 = "";
+     directions = str1+str2;
+      
+     str1 = "";
+     str2 = "";
     // A single line providing the move to be made: N NE E SE S SW W or NW
-        cout << directions << endl;
+     cout << directions << endl;
     }
 }
